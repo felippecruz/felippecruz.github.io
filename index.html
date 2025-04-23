@@ -1,43 +1,61 @@
 <!DOCTYPE html>
-<html lang="pt-br" data-theme="dark">
+<html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!---link rel="stylesheet" href="styles.css"--->
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <title>Felippe da Cruz</title>
-    <style type="text/tailwindcss">
-        @theme{
-            --bg-white: #ffffff; --bg-black: #000000;
-        }
-      </style>
-    </head>
-<body class="bg-white dark:bg-black">
+
+</head>
+
+<body class="#">
     <header>
-        <h1 class="text-white">Bem vindo(a) ao meu Portfolio</h1>
+        <nav class="bg-gray-800">
+            <div class="mx-auto max-w7xl mx-auto px-2 sm:px-6 lg:px-8">
+                <div class="relative flex h16 items-center justify-between">
+                    <div class="absolute instet-y-0 left-0 flex items-center sm:hidden">
+                        <button type="button"
+                            class="relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
+                            aria-controls="mobile-menu" aria-expanded="false"></button>
+                        </div>
+                </div>
+            </div>
+        </nav>
+
+
+
     </header>
-    <section id="about" class="text-white">
+    <section id="about" class="#">
         <h2>Sobre Mim</h2>
-        <img src="#" width="100px" alt="">
-        <p>Sou desenvolvedor e analista de sistemas jr com experiência em desenvolvimento web e sempre em busca de aprendizado contínuo.
+        <img src="#" width="100px" alt="" class="float-left">
+        <p>Sou desenvolvedor e analista de sistemas jr com experiência em desenvolvimento web e sempre em busca de
+            aprendizado contínuo.
             Estou sempre aberto a novos desafios e oportunidades para crescer na área.
-            Tenho habilidades em diversas tecnologias, incluindo HTML, CSS, JavaScript e frameworks modernos. Estou sempre buscando me atualizar e aprender novas ferramentas e técnicas para melhorar a qualidade do meu trabalho.
-            Estou sempre disposto a colaborar em projetos interessantes e a contribuir com a minha experiência para a equipe.
-            Estou sempre em busca de aprimorar minhas habilidades e contribuir para o sucesso dos projetos em que estou envolvido.
-            Além disso, sou apaixonado por tecnologia e inovação, sempre buscando aprender novas linguagens de programação e melhores práticas de desenvolvimento.
+            Tenho habilidades em diversas tecnologias, incluindo HTML, CSS, JavaScript e frameworks modernos. Estou
+            sempre buscando me atualizar e aprender novas ferramentas e técnicas para melhorar a qualidade do meu
+            trabalho.
+            Estou sempre disposto a colaborar em projetos interessantes e a contribuir com a minha experiência para a
+            equipe.
+            Estou sempre em busca de aprimorar minhas habilidades e contribuir para o sucesso dos projetos em que estou
+            envolvido.
+            Além disso, sou apaixonado por tecnologia e inovação, sempre buscando aprender novas linguagens de
+            programação e melhores práticas de desenvolvimento.
             Além disso, sou uma pessoa comprometida e organizada, sempre buscando entregar resultados de alta qualidade.
-            Além disso, sou um aprendiz ávido, sempre buscando oportunidades para expandir meu conhecimento e aplicar novas habilidades em projetos desafiadores.
+            Além disso, sou um aprendiz ávido, sempre buscando oportunidades para expandir meu conhecimento e aplicar
+            novas habilidades em projetos desafiadores.
         </p>
     </section>
-    <section id="projects" class="text-white">
+    <section id="projects" class="#">
         <h2>Projetos</h2>
-        <p>Here are some of my projects.</p>
+        <p>Aqui estão alguns dos meus projetos</p>
     </section>
-    <section id="skills">
+    <section id="skills" class="#">
         <h2>Habilidades</h2>
-        <p>These are my technical skills.</p>
+        <p>Confira minhas habilidades em desenvolvimento web, programação e design</p>
     </section>
-    <section id="contact" class="text-white">
+    <section id="contact" class="#">
         <h2>Contato</h2>
         <p>Entre em Contato Comigo</p>
         <form action="#" method="post">
@@ -50,13 +68,13 @@
         </form>
         <button type="submit">Enviar</button>
     </section>
-    <footer class="text-white">
+    <footer class="#">
         <p>&copy; 2025 Todos os direitos reservados.</p>
     </footer>
     <script>// On page load or when changing themes, best to add inline in `head` to avoid FOUC
         document.documentElement.classList.toggle(
-          "dark",
-          localStorage.theme === "dark" ||
+            "dark",
+            localStorage.theme === "dark" ||
             (!("theme" in localStorage) && window.matchMedia("(prefers-color-scheme: dark)").matches),
         );
         // Whenever the user explicitly chooses light mode
@@ -66,4 +84,5 @@
         // Whenever the user explicitly chooses to respect the OS preference
         localStorage.removeItem("theme");</script>
 </body>
+
 </html>
