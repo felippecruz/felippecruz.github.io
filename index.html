@@ -1,266 +1,345 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-br" class="scroll-smooth"> <!-- Adicionado scroll suave nativo -->
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!---link rel="stylesheet" href="styles.css"--->
+    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <title>Felippe da Cruz</title>
-<style>
-    #backToTop {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background-color: #4CAF50;
-      color: white;
-      padding: 15px 25px;
-      border: none;
-      border-radius: 55px;
-      cursor: pointer;
-      opacity: 0;
-      /* Inicialmente invisível */
-      transition: opacity 0.3s ease-in-out;
-    }
-
-    #backToTop.show {
-      opacity: 1;
-      /* Torna visível quando a classe 'show' é adicionada */
-    }
-</style>
+    <title>Felippe da Cruz - Desenvolvedor Web</title>
 </head>
 
-<body class="#">
-    <header>
+<body class="bg-white text-gray-900 antialiased">
+
+    <!-- HEADER / NAVIGATION -->
+    <header id="main-header">
         <nav class="bg-gray-800">
-            <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
-              <div class="relative flex h-16 items-center justify-between">
-                <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
-                  <button type="button" class="relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white" aria-controls="mobile-menu" aria-expanded="false">
-                    <span class="absolute -inset-0.5"></span>
-                    <!---span class="sr-only">Abrir menu principal</span--->
-                    <svg class="block h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
-                      <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
-                    </svg>
-                    <svg class="hidden h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
-                      <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
-                    </svg>
-                  </button>
-                </div>
-                <div class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-center">
-                  <div class="flex shrink-0 items-center">
-                    <!---img class="h-8 w-auto" src="#" alt="#"---->
-                  </div>
-                  <div class="hidden sm:ml-6 sm:block">
-                    <div class="flex space-x-4">
-                      <a href="#" class="bg-gray-900 text-white rounded-md px-3 py-2 text-sm font-medium" aria-current="page">Início</a>
-                      <a href="#about" class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Sobre</a>
-                      <a href="#projects" class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Projetos</a>
-                      <a href="#skills" class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Habilidades</a>
-                      <a href="#contact" class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Contato</a>
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="relative flex h-16 items-center justify-between">
+                    <!-- Mobile menu button -->
+                    <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
+                        <button type="button"
+                            class="relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
+                            aria-controls="mobile-menu" aria-expanded="false" id="mobile-menu-button">
+                            <span class="sr-only">Abrir menu principal</span>
+                            <!-- Ícone: Menu (Hambúrguer) -->
+                            <svg class="block h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor" aria-hidden="true">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                            </svg>
+                            <!-- Ícone: Fechar (X) -->
+                            <svg class="hidden h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor" aria-hidden="true">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                            </svg>
+                        </button>
                     </div>
-                  </div>
+
+                    <!-- Logo e Desktop Menu -->
+                    <div class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
+                        <div class="flex flex-shrink-0 items-center">
+                            <!-- <img class="h-8 w-auto" src="#" alt="Sua Logo"> -->
+                            <a href="#" class="text-white font-bold text-xl">Felippe.Dev</a>
+                        </div>
+                        <div class="hidden sm:ml-6 sm:block">
+                            <div class="flex space-x-4">
+                                <a href="#" class="bg-gray-900 text-white rounded-md px-3 py-2 text-sm font-medium"
+                                    aria-current="page">Início</a>
+                                <a href="#about"
+                                    class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Sobre</a>
+                                <a href="#projects"
+                                    class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Projetos</a>
+                                <a href="#certifications"
+                                    class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Certificações</a>
+                                <a href="#skills"
+                                    class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Habilidades</a>
+                                <a href="#contact"
+                                    class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Contato</a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
-                  </div>
-              </div>
             </div>
-            <div class="sm:hidden" id="mobile-menu">
+
+            <!-- Mobile menu, show/hide based on menu state. -->
+            <div class="sm:hidden hidden" id="mobile-menu">
                 <div class="space-y-1 px-2 pb-3 pt-2">
-                    <a href="#" class="bg-gray-900 text-white rounded-md px-3 py-2 text-sm font-medium" aria-current="page">Início</a>
-                <a href="#about" class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Sobre</a>
-                <a href="#projects" class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Projetos</a>
-                <a href="#skills" class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Habilidades</a>
-                <a href="#contact" class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Contato</a>
-            </div>
-        </div>
+                    <a href="#" class="bg-gray-900 text-white block rounded-md px-3 py-2 text-base font-medium"
+                        aria-current="page">Início</a>
+                    <a href="#about"
+                        class="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium">Sobre</a>
+                    <a href="#projects"
+                        class="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium">Projetos</a>
+                    <a href="#certifications"
+                        class="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium">Certificações</a>
+                    <a href="#skills"
+                        class="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium">Habilidades</a>
+                    <a href="#contact"
+                        class="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium">Contato</a>
+                </div>
             </div>
         </nav>
-
     </header>
-    <section id="about" class="py-10 bg-gray-100">
-        <div class="container mx-auto px-4">
-            <h2 class="text-3xl font-bold text-gray-800 mb-6">Sobre Mim</h2>
-            <div class="flex items-start gap-6">
-                <img src="#" alt="Sua Foto" class="w-32 h-32 rounded-full shadow-md">
-                <div>
-                    <p class="text-gray-700 leading-relaxed mb-4">
-                        Olá! Sou um desenvolvedor e analista de sistemas júnior com paixão por criar soluções web inovadoras e eficientes. Minha jornada na área de tecnologia tem sido uma busca constante por aprendizado e aprimoramento de minhas habilidades.
-                    </p>
-                    <p class="text-gray-700 leading-relaxed mb-4">
-                        Com experiência em desenvolvimento front-end e back-end, possuo um conhecimento sólido em tecnologias como HTML, CSS, JavaScript e frameworks modernos como React e Node.js. Minha experiência como analista de sistemas me permite ter uma visão abrangente dos projetos, desde a concepção até a implementação.
-                    </p>
-                    <p class="text-gray-700 leading-relaxed">
-                        Sou proativo, organizado e sempre busco colaborar com a equipe para alcançar os melhores resultados. Acredito que a comunicação clara e o trabalho em conjunto são fundamentais para o sucesso de qualquer projeto. Estou sempre aberto a novos desafios e oportunidades para expandir meus conhecimentos e contribuir para projetos impactantes.
-                    </p>
+
+    <!-- MAIN CONTENT -->
+    <main>
+
+        <!-- SOBRE MIM SECTION -->
+        <section id="about" class="py-16 md:py-24 bg-gray-50">
+            <div class="container mx-auto px-4">
+                <h2 class="text-3xl md:text-4xl font-extrabold text-gray-900 mb-8 border-l-4 border-indigo-600 pl-4">
+                    Sobre Mim</h2>
+                <div class="flex flex-col md:flex-row items-center md:items-start gap-10">
+                    <img src="/assets/images/Gemini_Generated_Image_mr0ellmr0ellmr0e.png" alt="Sua Foto"
+                        class="w-40 h-40 md:w-48 md:h-48 rounded-full shadow-lg object-cover ring-4 ring-indigo-100 flex-shrink-0">
+                    <div class="max-w-3xl text-center md:text-left">
+                        <p class="text-gray-700 leading-relaxed mb-5 text-lg">
+                            Olá! Sou um desenvolvedor e analista de sistemas júnior com paixão por criar soluções web
+                            inovadoras, funcionais e eficientes. Minha jornada na área de tecnologia tem sido uma busca
+                            constante por aprendizado e aprimoramento contínuo.
+                        </p>
+                        <p class="text-gray-700 leading-relaxed mb-5">
+                            Com foco no desenvolvimento web, possuo conhecimento sólido em <span
+                                class="font-semibold">HTML, CSS e JavaScript</span>, além de experiência com frameworks
+                            e bibliotecas como <span class="font-semibold">Bootstrap e Tailwind CSS</span>. Minha vivência
+                            como
+                            analista de sistemas me permite ter uma visão abrangente dos projetos, desde a concepção dos
+                            requisitos até a implementação final.
+                        </p>
+                        <p class="text-gray-700 leading-relaxed">
+                            Sou proativo, organizado e focado em colaborar com a equipe para alcançar os melhores
+                            resultados. Acredito que a comunicação clara e o trabalho em equipe são fundamentais para o
+                            sucesso de qualquer projeto. Estou sempre aberto a novos desafios e oportunidades para
+                            expandir
+                            meus conhecimentos e contribuir em projetos de alto impacto.
+                        </p>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
-    
-    <section id="projects" class="py-10">
-        <div class="container mx-auto px-4">
-            <h2 class="text-3xl font-bold text-gray-800 mb-6">Projetos</h2>
-            <p class="text-gray-700 leading-relaxed mb-4">Aqui estão alguns dos projetos em que trabalhei:</p>
-            <ul class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <li class="bg-white shadow-md rounded-md p-4">
-                    <strong class="text-lg font-semibold text-gray-800">Projeto 1: Site Innovation</strong>
-                    <p class="text-gray-600 mt-2">Esse foi meu primeiro projeto web qunando estava ainda fazendo estágio na faculdade, nesse site eu sob a orientação do meu mentor eu inseri e realizei mudanças nos dois botões um sendo o do whatsapp, e o outro um botão para direcionar o usuario para uma pagina de doações, sendo que ambos os botões se encontram no header da pagina</p>
-                    <a href="https://innovation.org.br/" class="inline-block mt-3 text-blue-500 hover:underline">Ver Detalhes</a>
-                </li>
-                <li class="bg-white shadow-md rounded-md p-4">
-                    <strong class="text-lg font-semibold text-gray-800">Projeto 2: Site Usinlog Transportes</strong>
-                    <p class="text-gray-600 mt-2">Esse é meu segundo projeto feito para uma transportadora em fase de crscimento na região de Guarulhos, neste projeto eu decidi usar tecnologias no-code para estar acelerando o desenvolvimento do mesmo.</p>
-                    <a href="https://www.usinlog.com" class="inline-block mt-3 text-blue-500 hover:underline">Ver Detalhes</a>
-                </li>
-                <!---li class="bg-white shadow-md rounded-md p-4">
-                    <strong class="text-lg font-semibold text-gray-800">Projeto 3: Projeto Web Moderno</strong>
-                    <p class="text-gray-600 mt-2">Detalhes sobre o Projeto 3, destacando as funcionalidades implementadas e a experiência do usuário.</p>
-                    <a href="#" class="inline-block mt-3 text-blue-500 hover:underline">Ver Detalhes</a>
-                </li>
-                </ul--->
-        </div>
-    </section>
-    <!---section id="certifications" class="py-10">
-        <div class="container mx-auto px-4 py-10 bg-gray-100">
-            <h2 class="text-3xl font-bold text-gray-800 mb-6">Certificações</h2>
-            <p class="text-gray-700 leading-relaxed mb-4">Aqui estão algumas das certificações que obtive:</p>
-            <ul class="list-disc list-inside text-gray-700">
-                <li>Certificação em Desenvolvimento Web - [Instituição]</li>
-                <li>Certificação em JavaScript Avançado - [Instituição]</li>
-                <li>Certificação em React - [Instituição]</li>
-                <li>Certificação em Node.js - [Instituição]</li>
-            </ul>
-        </div>
-    </section--->
+        </section>
 
-    <button id="backToTopBtn" class="fixed bottom-5 right-5 z-10 hidden p-3 rounded-md shadow-md bg-indigo-600 text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 transition-all duration-300">
-        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7"></path>
+        <!-- PROJETOS SECTION -->
+        <section id="projects" class="py-16 md:py-24 bg-white">
+            <div class="container mx-auto px-4">
+                <h2 class="text-3xl md:text-4xl font-extrabold text-gray-900 mb-8 border-l-4 border-indigo-600 pl-4">
+                    Projetos</h2>
+                <p class="text-gray-700 leading-relaxed mb-10 text-lg">Aqui estão alguns dos projetos em que trabalhei:
+                </p>
+                <ul class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Projeto 1 -->
+                    <li class="bg-white shadow-xl rounded-xl p-6 border border-gray-100 flex flex-col hover:shadow-2xl transition-shadow duration-300">
+                        <strong class="text-xl font-bold text-gray-900 mb-3">Site Innovation.org</strong>
+                        <p class="text-gray-600 mb-6 flex-grow">Este foi meu primeiro projeto web durante o estágio de faculdade. Sob orientação do meu mentor, inseri e realizei mudanças nos botões do WhatsApp e de doações, ambos localizados no header da página.</p>
+                        <a href="https://innovation.org.br/" target="_blank"
+                            class="inline-flex items-center gap-2 text-indigo-600 hover:text-indigo-800 font-semibold group mt-auto">
+                            Ver Projeto
+                            <svg class="w-4 h-4 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                            </svg>
+                        </a>
+                    </li>
+                    <!-- Projeto 2 -->
+                    <li class="bg-white shadow-xl rounded-xl p-6 border border-gray-100 flex flex-col hover:shadow-2xl transition-shadow duration-300">
+                        <strong class="text-xl font-bold text-gray-900 mb-3">Site Usinlog Transportes</strong>
+                        <p class="text-gray-600 mb-6 flex-grow">Meu segundo projeto, desenvolvido para uma transportadora em crescimento na região de Guarulhos. Neste projeto, utilizei tecnologias no-code para acelerar o desenvolvimento.</p>
+                        <a href="https://www.usinlog.com" target="_blank"
+                            class="inline-flex items-center gap-2 text-indigo-600 hover:text-indigo-800 font-semibold group mt-auto">
+                            Ver Projeto
+                            <svg class="w-4 h-4 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                            </svg>
+                        </a>
+                    </li>
+                    <!-- Projeto 3 - Placeholder -->
+                    <li class="bg-white shadow-xl rounded-xl p-6 border border-gray-100 flex flex-col hover:shadow-2xl transition-shadow duration-300">
+                        <strong class="text-xl font-bold text-gray-900 mb-3">Próximo Projeto</strong>
+                        <p class="text-gray-600 mb-6 flex-grow">Aguardando novo projeto ou preencha com mais um exemplo do seu trabalho!</p>
+                        <a href="#" class="text-indigo-600 font-semibold mt-auto disabled">Em breve...</a>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- CERTIFICAÇÕES SECTION -->
+        <section id="certifications" class="py-16 md:py-24 bg-gray-50">
+            <div class="container mx-auto px-4">
+                <h2 class="text-3xl md:text-4xl font-extrabold text-gray-900 mb-8 border-l-4 border-indigo-600 pl-4">
+                    Certificações</h2>
+                <p class="text-gray-700 leading-relaxed mb-8 text-lg">Algumas das certificações obtidas na minha jornada:
+                </p>
+                <div class="bg-white p-8 rounded-xl shadow-lg border border-gray-100">
+                    <ul class="space-y-4 text-gray-800">
+                        <li class="flex items-center gap-3">
+                            <svg class="w-5 h-5 text-indigo-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                            </svg>
+                            Certificação em Desenvolvimento Web - Curso em Vídeo
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- HABILIDADES SECTION -->
+        <section id="skills" class="py-16 md:py-24 bg-white">
+            <div class="container mx-auto px-4">
+                <h2 class="text-3xl md:text-4xl font-extrabold text-gray-900 mb-8 border-l-4 border-indigo-600 pl-4">
+                    Habilidades</h2>
+                <p class="text-gray-700 leading-relaxed mb-10 text-lg">Confira minhas habilidades em desenvolvimento web, programação e design:</p>
+                <div class="flex flex-wrap gap-4 justify-center md:justify-start">
+                    <!-- Cada item de habilidade agora é uma "tag" -->
+                    <span class="bg-indigo-100 text-indigo-800 font-semibold px-4 py-2 rounded-full text-sm">HTML</span>
+                    <span class="bg-indigo-100 text-indigo-800 font-semibold px-4 py-2 rounded-full text-sm">CSS</span>
+                    <span class="bg-indigo-100 text-indigo-800 font-semibold px-4 py-2 rounded-full text-sm">JavaScript</span>
+                    <span class="bg-indigo-100 text-indigo-800 font-semibold px-4 py-2 rounded-full text-sm">Tailwind CSS</span>
+                    <span class="bg-indigo-100 text-indigo-800 font-semibold px-4 py-2 rounded-full text-sm">Bootstrap</span>
+                    <span class="bg-indigo-100 text-indigo-800 font-semibold px-4 py-2 rounded-full text-sm">UX/UI</span>
+                    <span class="bg-indigo-100 text-indigo-800 font-semibold px-4 py-2 rounded-full text-sm">SQL</span>
+                    <span class="bg-indigo-100 text-indigo-800 font-semibold px-4 py-2 rounded-full text-sm">Git</span>
+                    <span class="bg-indigo-100 text-indigo-800 font-semibold px-4 py-2 rounded-full text-sm">WordPress</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTATO SECTION -->
+        <section id="contact" class="py-16 md:py-24 bg-gray-50">
+            <div class="container mx-auto px-4 max-w-4xl">
+                <h2 class="text-3xl md:text-4xl font-extrabold text-gray-900 mb-8 border-l-4 border-indigo-600 pl-4">
+                    Contato</h2>
+                <div class="bg-white p-8 md:p-12 rounded-xl shadow-lg border border-gray-100 text-center md:text-left">
+                    <p class="text-gray-700 leading-relaxed mb-4 text-lg">Entre em contato comigo! Estou sempre aberto a novas oportunidades e colaborações.</p>
+                    <p class="text-gray-700 leading-relaxed mb-2">E-mail preferencial:</p>
+                    <a href="mailto:felippedacruz1@gmail.com" class="text-2xl font-bold text-indigo-600 hover:text-indigo-800 mb-10 block break-words">felippedacruz1@gmail.com</a>
+                    
+                    <p class="text-gray-700 leading-relaxed mb-6">Ou envie uma mensagem diretamente pelo formulário:</p>
+                    
+                    <form action="https://formsubmit.co/felippedacruz1@gmail.com" method="post" class="max-w-2xl mx-auto md:mx-0">
+                        <div class="grid md:grid-cols-2 gap-6 mb-6">
+                            <div>
+                                <label for="Nome" class="block text-gray-700 text-sm font-semibold mb-2">Seu Nome:</label>
+                                <input type="text" name="name" id="Nome" placeholder="Seu nome completo" required
+                                    class="w-full py-3 px-4 text-gray-800 border border-gray-200 rounded-lg focus:ring-2 focus:ring-indigo-300 focus:border-indigo-400 transition">
+                            </div>
+                            <div>
+                                <label for="Email" class="block text-gray-700 text-sm font-semibold mb-2">Seu E-mail:</label>
+                                <input type="email" name="email" id="Email" placeholder="exemplo@email.com" required
+                                    class="w-full py-3 px-4 text-gray-800 border border-gray-200 rounded-lg focus:ring-2 focus:ring-indigo-300 focus:border-indigo-400 transition">
+                            </div>
+                        </div>
+                        <div class="mb-8">
+                            <label for="Message" class="block text-gray-700 text-sm font-semibold mb-2">Sua Mensagem:</label>
+                            <textarea name="message" id="Message" placeholder="Escreva sua mensagem aqui..." required
+                                class="w-full h-40 py-3 px-4 text-gray-800 border border-gray-200 rounded-lg focus:ring-2 focus:ring-indigo-300 focus:border-indigo-400 transition resize-none"></textarea>
+                        </div>
+                        <button type="submit"
+                            class="w-full md:w-auto bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3 px-8 rounded-lg transition-colors focus:ring-4 focus:ring-indigo-200 focus:outline-none">
+                            Enviar Mensagem
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer id="main-footer" class="bg-gray-800 text-gray-300 py-12 px-4 mt-16">
+        <div class="container mx-auto px-4 text-center">
+            <p class="mb-2 text-lg"><span class="font-bold text-white">Desenvolvedor Web</span> - Meu portfólio pessoal</p>
+            <p class="mb-2 text-sm">Contato: <a href="mailto:felippedacruz1@gmail.com"
+                    class="text-blue-400 hover:underline">felippedacruz1@gmail.com</a></p>
+            <hr class="my-6 border-gray-700 max-w-sm mx-auto">
+            <p class="text-xs">&copy; 2025 Felippe da Cruz Todos os direitos reservados.</p>
+            <p class="text-xs mt-3 italic max-w-lg mx-auto text-gray-400">Este portfólio foi criado para mostrar meu trabalho e habilidades em desenvolvimento web. Atualmente em constante aprimoramento!</p>
+        </div>
+    </footer>
+
+    <!-- BOTÃO VOLTAR AO TOPO -->
+    <!-- Classes CSS personalizadas foram substituídas por classes do Tailwind -->
+    <button id="backToTopBtn"
+        class="fixed bottom-6 right-6 z-50 hidden p-3 rounded-full shadow-lg bg-indigo-600 text-white hover:bg-indigo-700 focus:outline-none focus:ring-4 focus:ring-indigo-200 transition-all duration-300 transform hover:scale-110 active:scale-95">
+        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 15l7-7 7 7"></path>
         </svg>
         <span class="sr-only">Voltar ao Topo</span>
     </button>
-    
-    <!---section id="skills" class="py-10 bg-gray-100">
-        <div class="container mx-auto px-4">
-            <h2 class="text-3xl font-bold text-gray-800 mb-6">Habilidades</h2>
-            <p class="text-gray-700 leading-relaxed mb-4">Confira minhas habilidades em desenvolvimento web, programação e design:</p>
-            <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
-                <div class="bg-white shadow-md rounded-md p-3 text-center">
-                    <strong class="text-gray-700">HTML</strong>
-                </div>
-                <div class="bg-white shadow-md rounded-md p-3 text-center">
-                    <strong class="text-gray-700">CSS</strong>
-                </div>
-                <div class="bg-white shadow-md rounded-md p-3 text-center">
-                    <strong class="text-gray-700">JavaScript</strong>
-                </div>
-                <div class="bg-white shadow-md rounded-md p-3 text-center">
-                    <strong class="text-gray-700">React</strong>
-                </div>
-                <div class="bg-white shadow-md rounded-md p-3 text-center">
-                    <strong class="text-gray-700">Node.js</strong>
-                </div>
-                <div class="bg-white shadow-md rounded-md p-3 text-center">
-                    <strong class="text-gray-700">Python</strong>
-                </div>
-                <div class="bg-white shadow-md rounded-md p-3 text-center">
-                    <strong class="text-gray-700">SQL</strong>
-                </div>
-                <div class="bg-white shadow-md rounded-md p-3 text-center">
-                    <strong class="text-gray-700">Git</strong>
-                </div>
-                <div class="bg-white shadow-md rounded-md p-3 text-center">
-                    <strong class="text-gray-700">Metodologias Ágeis</strong>
-                </div>
-            </div>
-        </div>
-    </section---->
-    
-    <section id="contact" class="py-10">
-        <div class="container mx-auto px-4">
-            <h2 class="text-3xl font-bold text-gray-800 mb-6">Contato</h2>
-            <p class="text-gray-700 leading-relaxed mb-4">Entre em contato comigo! Estou sempre aberto a novas oportunidades e colaborações.</p>
-            <p class="text-gray-700 leading-relaxed mb-4">Você pode me contatar através do formulário abaixo ou pelo meu e-mail:</p>
-            <p class="text-blue-500 hover:underline mb-6">felippedacruz1@gmail.com</p>
-            <form action="https://formsubmit.co/felippedacruz1@gmail.com" method="post" class="max-w-lg mx-auto">
-                <div class="mb-4">
-                    <label for="name" class="block text-gray-700 text-sm font-bold mb-2">Nome:</label>
-                    <input type="text" name="name" id="Nome" placeholder="Digite seu nome:" required class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
-                </div>
-                <div class="mb-4">
-                    <label for="email" class="block text-gray-700 text-sm font-bold mb-2">Email:</label>
-                    <input type="email" name="email" id="Email" placeholder="Insira seu email aqui:" required class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
-                </div>
-                <div class="mb-6">
-                    <label for="message" class="block text-gray-700 text-sm font-bold mb-2">Mensagem:</label>
-                    <textarea name="message" id="Message" placeholder="Digite sua mensagem aqui:" required class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline h-32"></textarea>
-                </div>
-                <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Enviar Mensagem</button>
-            </form>
-        </div>
-    </section>
 
-    <strong><h1>Pagína em desenvolvimento</h1></strong>
+    <!-- JAVASCRIPT -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            
+            // --- MENU MOBILE ---
+            // IDs verificados e ajustados no HTML
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const icons = mobileMenuButton.querySelectorAll('svg'); // Seleciona ambos os ícones
 
-    <footer class="bg-gray-800 text-gray-300 py-6 px-4 mt-8">
-        <div class="container mx-auto text-center">
-        <p class="mb-2 text-sm"><span class="font-semibold">Desenvolvedor Web</span> - Meu portfólio pessoal</p>
-        <p class="mb-2 text-sm">Contato: <a href="mailto:felippedacruz1@gmail.com" class="text-blue-400 hover:underline">felippedacruz1@gmail.com</a></p>
-<hr class="my-4 border-gray-700">
-        <p class="text-xs">&copy; 2025 Todos os direitos reservados.</p>
-        <p class="text-xs">Desenvolvido por Felippe da Cruz</p>
-        <p class="text-xs mt-2 italic">Este portfólio foi criado para mostrar meu trabalho e habilidades em desenvolvimento web.</p>
-    </div>
-    </footer>
-    <script>// On page load or when changing themes, best to add inline in `head` to avoid FOUC
-        document.documentElement.classList.toggle(
-            "dark",
-            localStorage.theme === "dark" ||
-            (!("theme" in localStorage) && window.matchMedia("(prefers-color-scheme: dark)").matches),
-        );
-        // Whenever the user explicitly chooses light mode
-        localStorage.theme = "light";
-        // Whenever the user explicitly chooses dark mode
-        localStorage.theme = "dark";
-        // Whenever the user explicitly chooses to respect the OS preference
-        localStorage.removeItem("theme");
-        
-        const mobileMenuButton = document.querySelector('[aria-controls="mobile-menu"]');
-  const mobileMenu = document.getElementById('mobile-menu');
-  const openIcon = mobileMenuButton.querySelector('svg:first-child');
-  const closeIcon = mobileMenuButton.querySelector('svg:last-child');
+            if (mobileMenuButton && mobileMenu && icons.length >= 2) {
+                mobileMenuButton.addEventListener('click', () => {
+                    const expanded = mobileMenuButton.getAttribute('aria-expanded') === 'true';
+                    mobileMenuButton.setAttribute('aria-expanded', !expanded);
+                    
+                    // Alterna entre hidden e block para o menu
+                    mobileMenu.classList.toggle('hidden');
+                    
+                    // Alterna os ícones do botão
+                    icons[0].classList.toggle('hidden'); // Menu burguer
+                    icons[1].classList.toggle('hidden'); // X de fechar
+                });
 
-  mobileMenuButton.addEventListener('click', () => {
-    const expanded = mobileMenuButton.getAttribute('aria-expanded') === 'true' || false;
-    mobileMenuButton.setAttribute('aria-expanded', !expanded);
-    mobileMenu.classList.toggle('hidden');
-    openIcon.classList.toggle('hidden');
-    closeIcon.classList.toggle('hidden');
-  }); document.addEventListener('DOMContentLoaded', function() {
-    const backToTopBtn = document.getElementById('backToTopBtn');
+                // Fecha o menu mobile quando um item é clicado
+                const mobileLinks = mobileMenu.querySelectorAll('a');
+                mobileLinks.forEach(link => {
+                    link.addEventListener('click', () => {
+                        mobileMenu.classList.add('hidden');
+                        icons[0].classList.remove('hidden');
+                        icons[1].classList.add('hidden');
+                        mobileMenuButton.setAttribute('aria-expanded', 'false');
+                    });
+                });
+            }
 
-    function toggleBackToTopButton() {
-        if (window.scrollY > 300) {
-            backToTopBtn.classList.remove('hidden');
-        } else {
-            backToTopBtn.classList.add('hidden');
-        }
-    }
+            // --- BOTÃO VOLTAR AO TOPO ---
+            const backToTopBtn = document.getElementById('backToTopBtn');
 
-    function scrollToTop() {
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
+            if (backToTopBtn) {
+                function toggleBackToTopButton() {
+                    if (window.scrollY > 400) {
+                        // Exibe usando flex para centralizar o ícone e remove hidden
+                        backToTopBtn.classList.remove('hidden');
+                        backToTopBtn.classList.add('flex');
+                    } else {
+                        // Oculta usando hidden e remove flex
+                        backToTopBtn.classList.add('hidden');
+                        backToTopBtn.classList.remove('flex');
+                    }
+                }
+
+                function scrollToTop() {
+                    window.scrollTo({
+                        top: 0,
+                        // behavior: 'smooth' // Comentado pois usamos scroll-smooth nativo no HTML
+                    });
+                }
+
+                // Exibe ou oculta o botão ao rolar a página
+                window.addEventListener('scroll', toggleBackToTopButton);
+
+                // Adiciona o evento de clique para voltar ao topo
+                backToTopBtn.addEventListener('click', scrollToTop);
+                
+                // Chamada inicial para verificar estado na carga da página
+                toggleBackToTopButton();
+            }
+            
+            // --- LIMPEZA DO SCRIPT ORIGINAL ---
+            // Removido o bloco de Dark Mode original, pois não há elementos HTML 
+            // no código fornecido para gerenciar a troca de tema de forma intuitiva
+            // e os IDs usados no código JS original não batiam com os do HTML.
+
         });
-    }
-
-    // Exibe ou oculta o botão ao rolar a página
-    window.addEventListener('scroll', toggleBackToTopButton);
-
-    // Adiciona o evento de clique para voltar ao topo
-    backToTopBtn.addEventListener('click', scrollToTop);
-});</script>
+    </script>
 </body>
 
 </html>
