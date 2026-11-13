@@ -1,344 +1,619 @@
 <!DOCTYPE html>
-<html lang="pt-br" class="scroll-smooth"> <!-- Adicionado scroll suave nativo -->
+<html lang="pt-BR" class="scroll-smooth">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <title>Felippe da Cruz - Desenvolvedor Web</title>
+    <meta name="description" content="Portfólio de Felippe da Cruz - Desenvolvedor Web e Analista de Sistemas Júnior.">
+    <title>Felippe da Cruz | Desenvolvedor Web & Analista de Sistemas</title>
+
+    <!-- Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            bg: '#0c0a12',
+                            card: '#161221',
+                            border: '#272038',
+                            accent: '#8b5cf6',
+                            accentHover: '#7c3aed',
+                            rose: '#ec4899',
+                            green: '#10b981',
+                            gold: '#f59e0b'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        .glow-card:hover {
+            box-shadow: 0 0 25px -5px rgba(139, 92, 246, 0.25);
+        }
+    </style>
 </head>
 
-<body class="bg-white text-gray-900 antialiased">
+<body class="bg-brand-bg text-slate-300 font-sans antialiased selection:bg-brand-accent selection:text-white min-h-screen relative">
 
-    <!-- HEADER / NAVIGATION -->
-    <header id="main-header">
-        <nav class="bg-gray-800">
-            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="relative flex h-16 items-center justify-between">
-                    <!-- Mobile menu button -->
-                    <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
-                        <button type="button"
-                            class="relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
-                            aria-controls="mobile-menu" aria-expanded="false" id="mobile-menu-button">
-                            <span class="sr-only">Abrir menu principal</span>
-                            <!-- Ícone: Menu (Hambúrguer) -->
-                            <svg class="block h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                                stroke="currentColor" aria-hidden="true">
-                                <path stroke-linecap="round" stroke-linejoin="round"
-                                    d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
-                            </svg>
-                            <!-- Ícone: Fechar (X) -->
-                            <svg class="hidden h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                                stroke="currentColor" aria-hidden="true">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
-                            </svg>
-                        </button>
-                    </div>
-
-                    <!-- Logo e Desktop Menu -->
-                    <div class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
-                        <div class="flex flex-shrink-0 items-center">
-                            <!-- <img class="h-8 w-auto" src="#" alt="Sua Logo"> -->
-                            <a href="#" class="text-white font-bold text-xl">Felippe.Dev</a>
-                        </div>
-                        <div class="hidden sm:ml-6 sm:block">
-                            <div class="flex space-x-4">
-                                <a href="#" class="bg-gray-900 text-white rounded-md px-3 py-2 text-sm font-medium"
-                                    aria-current="page">Início</a>
-                                <a href="#about"
-                                    class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Sobre</a>
-                                <a href="#projects"
-                                    class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Projetos</a>
-                                <a href="#certifications"
-                                    class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Certificações</a>
-                                <a href="#skills"
-                                    class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Habilidades</a>
-                                <a href="#contact"
-                                    class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Contato</a>
-                            </div>
-                        </div>
-                    </div>
+    <!-- HEADER / NAVBAR -->
+    <header class="sticky top-0 z-40 backdrop-blur-md bg-brand-bg/90 border-b border-brand-border">
+        <div class="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between">
+            <!-- Identidade -->
+            <a href="#" class="flex items-center space-x-3 group">
+                <div class="w-10 h-10 rounded-full bg-gradient-to-tr from-brand-accent to-brand-rose flex items-center justify-center font-bold text-white shadow-lg group-hover:scale-105 transition-transform">
+                    FC
                 </div>
-            </div>
-
-            <!-- Mobile menu, show/hide based on menu state. -->
-            <div class="sm:hidden hidden" id="mobile-menu">
-                <div class="space-y-1 px-2 pb-3 pt-2">
-                    <a href="#" class="bg-gray-900 text-white block rounded-md px-3 py-2 text-base font-medium"
-                        aria-current="page">Início</a>
-                    <a href="#about"
-                        class="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium">Sobre</a>
-                    <a href="#projects"
-                        class="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium">Projetos</a>
-                    <a href="#certifications"
-                        class="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium">Certificações</a>
-                    <a href="#skills"
-                        class="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium">Habilidades</a>
-                    <a href="#contact"
-                        class="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium">Contato</a>
+                <div>
+                    <span class="text-white font-bold block text-base leading-none">Felippe da Cruz</span>
+                    <span class="text-slate-400 text-xs">Desenvolvedor Web &amp; Analista de Sistemas</span>
                 </div>
+            </a>
+
+            <!-- Links Desktop -->
+            <nav class="hidden lg:flex items-center space-x-6 text-xs font-medium text-slate-400">
+                <a href="#about" class="hover:text-white transition">Sobre</a>
+                <a href="#simulator" class="hover:text-white transition">Simulador</a>
+                <a href="#skills" class="hover:text-white transition">Habilidades</a>
+                <a href="#projects" class="hover:text-white transition">Projetos</a>
+                <a href="#faq" class="hover:text-white transition">FAQ</a>
+            </nav>
+
+            <!-- Status Badge + Mobile Button -->
+            <div class="flex items-center space-x-4">
+                <div class="hidden sm:flex items-center space-x-2.5 text-xs bg-brand-card border border-brand-border px-3.5 py-2 rounded-full">
+                    <span class="relative flex h-2.5 w-2.5">
+                        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-green opacity-75"></span>
+                        <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-brand-green"></span>
+                    </span>
+                    <span class="text-emerald-400 font-medium">Disponível para projetos</span>
+                </div>
+
+                <!-- Botão Mobile -->
+                <button id="mobileMenuBtn" type="button" aria-label="Abrir menu" class="lg:hidden w-10 h-10 rounded-lg bg-brand-card border border-brand-border flex items-center justify-center text-white hover:border-brand-accent transition">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
             </div>
-        </nav>
+        </div>
+
+        <!-- Menu Mobile Dropdown -->
+        <div id="mobileMenu" class="hidden lg:hidden border-t border-brand-border bg-brand-bg px-6 py-4 space-y-3 text-sm">
+            <a href="#about" class="mobile-link block py-1.5 text-slate-300 hover:text-white">Sobre Mim</a>
+            <a href="#simulator" class="mobile-link block py-1.5 text-slate-300 hover:text-white">Simulador de Projeto</a>
+            <a href="#skills" class="mobile-link block py-1.5 text-slate-300 hover:text-white">Habilidades &amp; Certificações</a>
+            <a href="#projects" class="mobile-link block py-1.5 text-slate-300 hover:text-white">Projetos</a>
+            <a href="#faq" class="mobile-link block py-1.5 text-slate-300 hover:text-white">Perguntas Frequentes</a>
+            <a href="#contact" class="mobile-link block py-2 text-center rounded-lg bg-brand-accent text-white font-semibold">Entrar em Contato</a>
+        </div>
     </header>
 
-    <!-- MAIN CONTENT -->
-    <main>
+    <main class="max-w-6xl mx-auto px-6 py-12 space-y-24">
 
-        <!-- SOBRE MIM SECTION -->
-        <section id="about" class="py-16 md:py-24 bg-gray-50">
-            <div class="container mx-auto px-4">
-                <h2 class="text-3xl md:text-4xl font-extrabold text-gray-900 mb-8 border-l-4 border-indigo-600 pl-4">
-                    Sobre Mim</h2>
-                <div class="flex flex-col md:flex-row items-center md:items-start gap-10">
-                    <img src="/assets/images/Gemini_Generated_Image_mr0ellmr0ellmr0e.png" alt="Sua Foto"
-                        class="w-40 h-40 md:w-48 md:h-48 rounded-full shadow-lg object-cover ring-4 ring-indigo-100 flex-shrink-0">
-                    <div class="max-w-3xl text-center md:text-left">
-                        <p class="text-gray-700 leading-relaxed mb-5 text-lg">
-                            Olá! Sou um desenvolvedor e analista de sistemas júnior com paixão por criar soluções web
-                            inovadoras, funcionais e eficientes. Minha jornada na área de tecnologia tem sido uma busca
-                            constante por aprendizado e aprimoramento contínuo.
-                        </p>
-                        <p class="text-gray-700 leading-relaxed mb-5">
-                            Com foco no desenvolvimento web, possuo conhecimento sólido em <span
-                                class="font-semibold">HTML, CSS e JavaScript</span>, além de experiência com frameworks
-                            e bibliotecas como <span class="font-semibold">Bootstrap e Tailwind CSS</span>. Minha vivência
-                            como
-                            analista de sistemas me permite ter uma visão abrangente dos projetos, desde a concepção dos
-                            requisitos até a implementação final.
-                        </p>
-                        <p class="text-gray-700 leading-relaxed">
-                            Sou proativo, organizado e focado em colaborar com a equipe para alcançar os melhores
-                            resultados. Acredito que a comunicação clara e o trabalho em equipe são fundamentais para o
-                            sucesso de qualquer projeto. Estou sempre aberto a novos desafios e oportunidades para
-                            expandir
-                            meus conhecimentos e contribuir em projetos de alto impacto.
-                        </p>
+        <!-- HERO SECTION -->
+        <section class="space-y-8 pt-4 text-center md:text-left md:flex md:items-center md:justify-between md:gap-12">
+            <div class="space-y-6 md:w-3/5">
+                <div class="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-brand-accent/10 border border-brand-accent/30 text-xs text-purple-300 font-semibold">
+                    <i class="fa-solid fa-code"></i>
+                    <span>Desenvolvimento Web &amp; Análise de Sistemas</span>
+                </div>
+
+                <h1 class="text-4xl md:text-6xl font-extrabold text-white tracking-tight leading-tight">
+                    Transformo ideias em <span class="bg-gradient-to-r from-purple-400 via-pink-400 to-emerald-400 bg-clip-text text-transparent">soluções web rápidas</span> e funcionais.
+                </h1>
+
+                <p class="text-slate-400 text-lg max-w-xl font-normal leading-relaxed mx-auto md:mx-0">
+                    Como Desenvolvedor Web e Analista de Sistemas Júnior, uno arquitetura bem planejada, interfaces responsivas e código limpo para tirar o seu projeto do papel.
+                </p>
+
+                <div class="flex flex-col sm:flex-row gap-4 pt-2 justify-center md:justify-start">
+                    <a href="#contact" class="px-8 py-4 rounded-xl bg-brand-green text-slate-950 font-bold flex items-center justify-center space-x-3 hover:bg-emerald-400 transition-all transform hover:-translate-y-0.5 shadow-lg shadow-brand-green/20">
+                        <i class="fa-solid fa-paper-plane text-lg"></i>
+                        <span>Iniciar um Projeto</span>
+                    </a>
+                    <a href="#projects" class="px-8 py-4 rounded-xl bg-brand-card border border-brand-border text-white font-semibold flex items-center justify-center space-x-2 hover:border-slate-500 transition-all">
+                        <span>Ver Portfólio</span>
+                        <i class="fa-solid fa-arrow-down text-xs text-slate-400"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Card de Destaque / Painel Dev Simulado -->
+            <div class="md:w-2/5 mt-8 md:mt-0">
+                <div class="bg-brand-card border border-brand-border rounded-2xl p-6 space-y-6 shadow-2xl relative overflow-hidden text-left">
+                    <div class="flex justify-between items-center border-b border-brand-border pb-4">
+                        <div class="flex items-center space-x-2">
+                            <span class="w-3 h-3 rounded-full bg-rose-500"></span>
+                            <span class="w-3 h-3 rounded-full bg-amber-400"></span>
+                            <span class="w-3 h-3 rounded-full bg-emerald-500"></span>
+                            <span class="text-xs font-mono text-slate-400 ml-2">felippe.config.js</span>
+                        </div>
+                        <span class="text-xs bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 px-2.5 py-1 rounded-full font-medium">Online</span>
+                    </div>
+
+                    <div class="space-y-4">
+                        <div>
+                            <span class="text-xs text-slate-400 block">Performance &amp; Responsividade</span>
+                            <span class="text-3xl font-extrabold text-white">100% Mobile-First</span>
+                        </div>
+                        <div class="w-full bg-slate-800 h-2 rounded-full overflow-hidden">
+                            <div class="bg-gradient-to-r from-brand-accent to-brand-rose h-full w-[92%]"></div>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-2 gap-4 pt-2">
+                        <div class="bg-slate-900/60 p-3 rounded-lg border border-brand-border">
+                            <span class="text-[11px] text-slate-400 block">Front-End Core</span>
+                            <span class="text-sm font-bold text-white">HTML • CSS • JS • Tailwind</span>
+                        </div>
+                        <div class="bg-slate-900/60 p-3 rounded-lg border border-brand-border">
+                            <span class="text-[11px] text-slate-400 block">Dados &amp; Versionamento</span>
+                            <span class="text-sm font-bold text-emerald-400">SQL • Git • WordPress</span>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- PROJETOS SECTION -->
-        <section id="projects" class="py-16 md:py-24 bg-white">
-            <div class="container mx-auto px-4">
-                <h2 class="text-3xl md:text-4xl font-extrabold text-gray-900 mb-8 border-l-4 border-indigo-600 pl-4">
-                    Projetos</h2>
-                <p class="text-gray-700 leading-relaxed mb-10 text-lg">Aqui estão alguns dos projetos em que trabalhei:
-                </p>
-                <ul class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <!-- Projeto 1 -->
-                    <li class="bg-white shadow-xl rounded-xl p-6 border border-gray-100 flex flex-col hover:shadow-2xl transition-shadow duration-300">
-                        <strong class="text-xl font-bold text-gray-900 mb-3">Site Innovation.org</strong>
-                        <p class="text-gray-600 mb-6 flex-grow">Este foi meu primeiro projeto web durante o estágio de faculdade. Sob orientação do meu mentor, inseri e realizei mudanças nos botões do WhatsApp e de doações, ambos localizados no header da página.</p>
-                        <a href="https://innovation.org.br/" target="_blank"
-                            class="inline-flex items-center gap-2 text-indigo-600 hover:text-indigo-800 font-semibold group mt-auto">
-                            Ver Projeto
-                            <svg class="w-4 h-4 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
-                            </svg>
-                        </a>
-                    </li>
-                    <!-- Projeto 2 -->
-                    <li class="bg-white shadow-xl rounded-xl p-6 border border-gray-100 flex flex-col hover:shadow-2xl transition-shadow duration-300">
-                        <strong class="text-xl font-bold text-gray-900 mb-3">Site Usinlog Transportes</strong>
-                        <p class="text-gray-600 mb-6 flex-grow">Meu segundo projeto, desenvolvido para uma transportadora em crescimento na região de Guarulhos. Neste projeto, utilizei tecnologias no-code para acelerar o desenvolvimento.</p>
-                        <a href="https://www.usinlog.com" target="_blank"
-                            class="inline-flex items-center gap-2 text-indigo-600 hover:text-indigo-800 font-semibold group mt-auto">
-                            Ver Projeto
-                            <svg class="w-4 h-4 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
-                            </svg>
-                        </a>
-                    </li>
-                    <!-- Projeto 3 - Placeholder -->
-                    <li class="bg-white shadow-xl rounded-xl p-6 border border-gray-100 flex flex-col hover:shadow-2xl transition-shadow duration-300">
-                        <strong class="text-xl font-bold text-gray-900 mb-3">Próximo Projeto</strong>
-                        <p class="text-gray-600 mb-6 flex-grow">Aguardando novo projeto ou preencha com mais um exemplo do seu trabalho!</p>
-                        <a href="#" class="text-indigo-600 font-semibold mt-auto disabled">Em breve...</a>
-                    </li>
-                </ul>
+        <!-- MÉTRICAS ANIMADAS -->
+        <section class="grid grid-cols-2 md:grid-cols-4 gap-4 py-6 border-y border-brand-border">
+            <div class="text-center p-4">
+                <div class="text-3xl md:text-4xl font-extrabold text-white counter" data-target="9" data-prefix="+" data-suffix="">0</div>
+                <div class="text-xs text-slate-400 uppercase tracking-wider mt-1">Tecnologias no Stack</div>
+            </div>
+            <div class="text-center p-4">
+                <div class="text-3xl md:text-4xl font-extrabold text-white counter" data-target="100" data-prefix="" data-suffix="%">0%</div>
+                <div class="text-xs text-slate-400 uppercase tracking-wider mt-1">Código Responsivo</div>
+            </div>
+            <div class="text-center p-4">
+                <div class="text-3xl md:text-4xl font-extrabold text-white counter" data-target="350" data-prefix="+" data-suffix="h">0h</div>
+                <div class="text-xs text-slate-400 uppercase tracking-wider mt-1">Prática &amp; Desenvolvimento</div>
+            </div>
+            <div class="text-center p-4">
+                <div class="text-3xl md:text-4xl font-extrabold text-white counter" data-target="24" data-prefix="" data-suffix="h">0h</div>
+                <div class="text-xs text-slate-400 uppercase tracking-wider mt-1">Retorno de Contato</div>
             </div>
         </section>
 
-        <!-- CERTIFICAÇÕES SECTION -->
-        <section id="certifications" class="py-16 md:py-24 bg-gray-50">
-            <div class="container mx-auto px-4">
-                <h2 class="text-3xl md:text-4xl font-extrabold text-gray-900 mb-8 border-l-4 border-indigo-600 pl-4">
-                    Certificações</h2>
-                <p class="text-gray-700 leading-relaxed mb-8 text-lg">Algumas das certificações obtidas na minha jornada:
-                </p>
-                <div class="bg-white p-8 rounded-xl shadow-lg border border-gray-100">
-                    <ul class="space-y-4 text-gray-800">
-                        <li class="flex items-center gap-3">
-                            <svg class="w-5 h-5 text-indigo-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                            </svg>
-                            Certificação em Desenvolvimento Web - Curso em Vídeo
+        <!-- SOBRE MIM -->
+        <section id="about" class="bg-brand-card border border-brand-border rounded-2xl p-8 md:p-10">
+            <div class="flex flex-col md:flex-row items-center md:items-start gap-8 md:gap-12">
+                <img src="assets/images/Gemini_Generated_Image_mr0ellmr0ellmr0e.png" alt="Foto de Felippe da Cruz"
+                    class="w-40 h-40 md:w-48 md:h-48 rounded-2xl object-cover shadow-xl ring-2 ring-brand-accent/40 flex-shrink-0 bg-slate-900">
+
+                <div class="space-y-4 text-center md:text-left">
+                    <h2 class="text-xs font-bold text-brand-accent uppercase tracking-widest">Sobre Mim</h2>
+                    <h3 class="text-2xl md:text-3xl font-bold text-white">Visão analítica aliada ao desenvolvimento moderno</h3>
+                    <p class="text-sm md:text-base text-slate-300 leading-relaxed">
+                        Olá! Sou desenvolvedor e <strong class="text-white">Analista de Sistemas Júnior</strong> com paixão por criar soluções web inovadoras, funcionais e eficientes. Minha jornada na área de tecnologia é guiada pelo aprendizado contínuo e pela entrega de valor real.
+                    </p>
+                    <p class="text-sm md:text-base text-slate-400 leading-relaxed">
+                        Com foco no desenvolvimento web, possuo conhecimento sólido em <span class="text-purple-300 font-semibold">HTML, CSS e JavaScript</span>, além de experiência prática com <span class="text-purple-300 font-semibold">Tailwind CSS, Bootstrap, SQL, Git e WordPress</span>. Minha vivência como analista permite enxergar o projeto de ponta a ponta — desde a concepção dos requisitos até a publicação.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SIMULADOR INTERATIVO DE PROJETO WEB -->
+        <section id="simulator" class="bg-brand-card border border-brand-border rounded-2xl p-8 space-y-6">
+            <div class="text-center max-w-xl mx-auto space-y-2">
+                <h2 class="text-xs font-bold text-brand-accent uppercase tracking-widest">Simulador Interativo</h2>
+                <p class="text-2xl font-bold text-white">Estime o Escopo do seu Site</p>
+                <p class="text-xs text-slate-400">Selecione o tipo de projeto e os recursos desejados para simular prazo e investimento base.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8 items-center pt-4">
+                <div class="space-y-4">
+                    <div>
+                        <label for="projectType" class="text-xs text-slate-400 block mb-1.5">Tipo de Projeto Web</label>
+                        <select id="projectType" class="w-full bg-slate-900 border border-brand-border rounded-lg px-4 py-3 text-white font-semibold focus:outline-none focus:border-brand-accent">
+                            <option value="800" data-days="5">Landing Page de Alta Conversão</option>
+                            <option value="1500" data-days="10" selected>Site Institucional Completo (até 5 páginas)</option>
+                            <option value="2800" data-days="20">Sistema Web / Painel Personalizado</option>
+                        </select>
+                    </div>
+
+                    <div class="space-y-2 pt-1">
+                        <span class="text-xs text-slate-400 block">Recursos Adicionais:</span>
+                        <label class="flex items-center space-x-3 bg-slate-900/60 border border-brand-border p-3 rounded-lg cursor-pointer hover:border-brand-accent/50 transition">
+                            <input type="checkbox" class="addon-check accent-purple-500 w-4 h-4" value="250" data-days="2" checked>
+                            <span class="text-xs text-slate-200 flex-1">Integração WhatsApp &amp; Formulário de Leads</span>
+                            <span class="text-xs font-semibold text-purple-300">+R$ 250</span>
+                        </label>
+                        <label class="flex items-center space-x-3 bg-slate-900/60 border border-brand-border p-3 rounded-lg cursor-pointer hover:border-brand-accent/50 transition">
+                            <input type="checkbox" class="addon-check accent-purple-500 w-4 h-4" value="350" data-days="3">
+                            <span class="text-xs text-slate-200 flex-1">Otimização SEO Técnico &amp; Performance</span>
+                            <span class="text-xs font-semibold text-purple-300">+R$ 350</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="bg-slate-900/80 border border-brand-border rounded-xl p-6 text-center space-y-3">
+                    <span class="text-xs text-slate-400 uppercase tracking-wider block">Investimento Estimado</span>
+                    <div id="simPrice" class="text-4xl font-extrabold text-emerald-400">R$ 1.750,00</div>
+                    <div class="inline-flex items-center space-x-2 text-xs text-purple-300 bg-brand-accent/10 border border-brand-accent/20 px-3 py-1 rounded-full">
+                        <i class="fa-regular fa-clock"></i>
+                        <span>Prazo estimado: <strong id="simDays">12 dias úteis</strong></span>
+                    </div>
+                    <span class="text-[11px] text-slate-500 block pt-2">*Valores referenciais sujeitos à análise detalhada dos requisitos.</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- HABILIDADES & CERTIFICAÇÕES -->
+        <section id="skills" class="space-y-8">
+            <div class="text-center max-w-2xl mx-auto space-y-2">
+                <h2 class="text-xs font-bold text-brand-accent uppercase tracking-widest">Stack &amp; Formação</h2>
+                <p class="text-2xl md:text-3xl font-bold text-white">Tecnologias e ferramentas que domino</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6">
+                <!-- Card 1: Front-End -->
+                <div class="bg-brand-card border border-brand-border rounded-xl p-6 space-y-4 glow-card transition-all duration-300">
+                    <div class="w-12 h-12 rounded-lg bg-purple-600/10 border border-purple-500/20 flex items-center justify-center text-purple-400 text-2xl">
+                        <i class="fa-solid fa-laptop-code"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white">Front-End &amp; UI</h3>
+                    <p class="text-sm text-slate-400 leading-relaxed">Interfaces responsivas, acessíveis e modernas focadas na experiência do usuário.</p>
+                    <div class="flex flex-wrap gap-2 pt-2">
+                        <span class="text-xs px-2.5 py-1 rounded-md bg-slate-900 border border-brand-border text-slate-200">HTML5</span>
+                        <span class="text-xs px-2.5 py-1 rounded-md bg-slate-900 border border-brand-border text-slate-200">CSS3</span>
+                        <span class="text-xs px-2.5 py-1 rounded-md bg-slate-900 border border-brand-border text-slate-200">JavaScript</span>
+                        <span class="text-xs px-2.5 py-1 rounded-md bg-slate-900 border border-brand-border text-slate-200">Tailwind CSS</span>
+                        <span class="text-xs px-2.5 py-1 rounded-md bg-slate-900 border border-brand-border text-slate-200">Bootstrap</span>
+                        <span class="text-xs px-2.5 py-1 rounded-md bg-slate-900 border border-brand-border text-slate-200">UX/UI</span>
+                    </div>
+                </div>
+
+                <!-- Card 2: Back-End & Ferramentas -->
+                <div class="bg-brand-card border border-brand-border rounded-xl p-6 space-y-4 glow-card transition-all duration-300">
+                    <div class="w-12 h-12 rounded-lg bg-pink-600/10 border border-pink-500/20 flex items-center justify-center text-pink-400 text-2xl">
+                        <i class="fa-solid fa-database"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white">Dados &amp; Ecossistema</h3>
+                    <p class="text-sm text-slate-400 leading-relaxed">Estruturação de bancos relacionais, versionamento de código e gestão de conteúdo.</p>
+                    <div class="flex flex-wrap gap-2 pt-2">
+                        <span class="text-xs px-2.5 py-1 rounded-md bg-slate-900 border border-brand-border text-slate-200">SQL</span>
+                        <span class="text-xs px-2.5 py-1 rounded-md bg-slate-900 border border-brand-border text-slate-200">Git</span>
+                        <span class="text-xs px-2.5 py-1 rounded-md bg-slate-900 border border-brand-border text-slate-200">WordPress</span>
+                        <span class="text-xs px-2.5 py-1 rounded-md bg-slate-900 border border-brand-border text-slate-200">Análise de Requisitos</span>
+                    </div>
+                </div>
+
+                <!-- Card 3: Certificações -->
+                <div id="certifications" class="bg-brand-card border border-brand-border rounded-xl p-6 space-y-4 glow-card transition-all duration-300">
+                    <div class="w-12 h-12 rounded-lg bg-emerald-600/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400 text-2xl">
+                        <i class="fa-solid fa-award"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white">Certificações</h3>
+                    <p class="text-sm text-slate-400 leading-relaxed">Formação acadêmica e cursos técnicos de especialização na área web:</p>
+                    <ul class="space-y-2.5 pt-1 text-xs text-slate-200">
+                        <li class="flex items-start space-x-2">
+                            <i class="fa-solid fa-circle-check text-emerald-400 mt-0.5"></i>
+                            <span><strong>Desenvolvimento Web</strong> — Curso em Vídeo</span>
+                        </li>
+                        <li class="flex items-start space-x-2">
+                            <i class="fa-solid fa-circle-check text-emerald-400 mt-0.5"></i>
+                            <span><strong>Análise e Desenvolvimento de Sistemas</strong> — Graduação</span>
                         </li>
                     </ul>
                 </div>
             </div>
         </section>
 
-        <!-- HABILIDADES SECTION -->
-        <section id="skills" class="py-16 md:py-24 bg-white">
-            <div class="container mx-auto px-4">
-                <h2 class="text-3xl md:text-4xl font-extrabold text-gray-900 mb-8 border-l-4 border-indigo-600 pl-4">
-                    Habilidades</h2>
-                <p class="text-gray-700 leading-relaxed mb-10 text-lg">Confira minhas habilidades em desenvolvimento web, programação e design:</p>
-                <div class="flex flex-wrap gap-4 justify-center md:justify-start">
-                    <!-- Cada item de habilidade agora é uma "tag" -->
-                    <span class="bg-indigo-100 text-indigo-800 font-semibold px-4 py-2 rounded-full text-sm">HTML</span>
-                    <span class="bg-indigo-100 text-indigo-800 font-semibold px-4 py-2 rounded-full text-sm">CSS</span>
-                    <span class="bg-indigo-100 text-indigo-800 font-semibold px-4 py-2 rounded-full text-sm">JavaScript</span>
-                    <span class="bg-indigo-100 text-indigo-800 font-semibold px-4 py-2 rounded-full text-sm">Tailwind CSS</span>
-                    <span class="bg-indigo-100 text-indigo-800 font-semibold px-4 py-2 rounded-full text-sm">Bootstrap</span>
-                    <span class="bg-indigo-100 text-indigo-800 font-semibold px-4 py-2 rounded-full text-sm">UX/UI</span>
-                    <span class="bg-indigo-100 text-indigo-800 font-semibold px-4 py-2 rounded-full text-sm">SQL</span>
-                    <span class="bg-indigo-100 text-indigo-800 font-semibold px-4 py-2 rounded-full text-sm">Git</span>
-                    <span class="bg-indigo-100 text-indigo-800 font-semibold px-4 py-2 rounded-full text-sm">WordPress</span>
+        <!-- PROJETOS (FILTRO INTERATIVO) -->
+        <section id="projects" class="space-y-8">
+            <div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
+                <div>
+                    <h2 class="text-xs font-bold text-brand-accent uppercase tracking-widest">Portfólio</h2>
+                    <p class="text-2xl md:text-3xl font-bold text-white mt-1">Projetos Desenvolvidos</p>
+                </div>
+
+                <div class="flex flex-wrap gap-2 bg-brand-card p-1.5 rounded-xl border border-brand-border text-xs">
+                    <button onclick="filterProjects('all', this)" class="filter-btn px-4 py-2 rounded-lg bg-brand-accent text-white font-medium transition">Todos</button>
+                    <button onclick="filterProjects('frontend', this)" class="filter-btn px-4 py-2 rounded-lg text-slate-400 hover:text-white transition">Front-End / UI</button>
+                    <button onclick="filterProjects('institucional', this)" class="filter-btn px-4 py-2 rounded-lg text-slate-400 hover:text-white transition">Institucional</button>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6">
+                <!-- Projeto 1 -->
+                <article class="project-card bg-brand-card border border-brand-border rounded-xl p-6 space-y-4 flex flex-col justify-between glow-card transition-all duration-300" data-category="frontend">
+                    <div class="space-y-3">
+                        <div class="flex justify-between items-center">
+                            <span class="text-xs font-semibold px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">Front-End / Conversão</span>
+                            <span class="text-xs text-slate-500">Estágio Web</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-white">Site Innovation.org</h3>
+                        <p class="text-sm text-slate-400 leading-relaxed">
+                            Primeiro projeto web durante estágio de faculdade. Implementação e melhorias nos botões de WhatsApp e de doações no header da página para facilitar o contato dos visitantes.
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-brand-border/60">
+                        <a href="https://innovation.org.br/" target="_blank" rel="noopener noreferrer"
+                            class="inline-flex items-center space-x-2 text-sm font-semibold text-purple-400 hover:text-purple-300 transition group">
+                            <span>Ver Projeto Online</span>
+                            <i class="fa-solid fa-arrow-up-right-from-square text-xs transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform"></i>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Projeto 2 -->
+                <article class="project-card bg-brand-card border border-brand-border rounded-xl p-6 space-y-4 flex flex-col justify-between glow-card transition-all duration-300" data-category="institucional">
+                    <div class="space-y-3">
+                        <div class="flex justify-between items-center">
+                            <span class="text-xs font-semibold px-3 py-1 rounded-full bg-purple-500/10 text-purple-300 border border-purple-500/20">Institucional / Logística</span>
+                            <span class="text-xs text-slate-500">Guarulhos - SP</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-white">Site Usinlog Transportes</h3>
+                        <p class="text-sm text-slate-400 leading-relaxed">
+                            Desenvolvido para uma transportadora em crescimento na região de Guarulhos. Estruturado com tecnologias no-code para agilizar a entrega e fortalecer a presença digital da empresa.
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-brand-border/60">
+                        <a href="https://www.usinlog.com" target="_blank" rel="noopener noreferrer"
+                            class="inline-flex items-center space-x-2 text-sm font-semibold text-purple-400 hover:text-purple-300 transition group">
+                            <span>Ver Projeto Online</span>
+                            <i class="fa-solid fa-arrow-up-right-from-square text-xs transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform"></i>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Projeto 3 (Placeholder) -->
+                <article class="project-card bg-brand-card/50 border border-dashed border-brand-border rounded-xl p-6 space-y-4 flex flex-col justify-between transition-all duration-300" data-category="frontend">
+                    <div class="space-y-3">
+                        <div class="flex justify-between items-center">
+                            <span class="text-xs font-semibold px-3 py-1 rounded-full bg-slate-800 text-slate-400">Em Desenvolvimento</span>
+                            <span class="text-xs text-slate-500">2026</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-200">Próximo Projeto</h3>
+                        <p class="text-sm text-slate-500 leading-relaxed">
+                            Nova aplicação web em fase de arquitetura e codificação. Em breve disponível aqui com código-fonte e demonstração.
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-brand-border/40">
+                        <span class="text-sm font-semibold text-slate-500 cursor-not-allowed">Em breve...</span>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- PERGUNTAS FREQUENTES (FAQ INTERATIVO) -->
+        <section id="faq" class="space-y-6">
+            <div class="text-center max-w-xl mx-auto space-y-2">
+                <h2 class="text-xs font-bold text-brand-accent uppercase tracking-widest">Dúvidas Comuns</h2>
+                <p class="text-2xl font-bold text-white">Perguntas Frequentes</p>
+            </div>
+
+            <div class="max-w-3xl mx-auto space-y-3">
+                <div class="bg-brand-card border border-brand-border rounded-xl overflow-hidden">
+                    <button onclick="toggleFaq(this)" class="w-full px-6 py-4 text-left font-semibold text-white flex justify-between items-center focus:outline-none hover:text-purple-300 transition">
+                        <span>Quais tipos de sites e sistemas você desenvolve?</span>
+                        <i class="fa-solid fa-chevron-down text-xs text-slate-400 transition-transform duration-200"></i>
+                    </button>
+                    <div class="px-6 pb-4 text-xs md:text-sm text-slate-400 hidden border-t border-brand-border/50 pt-3 leading-relaxed">
+                        Desenvolvo Landing Pages focadas em conversão, sites institucionais para empresas e prestadores de serviço, portfólios profissionais e aplicações web sob medida com HTML, CSS, JavaScript, Tailwind CSS e SQL.
+                    </div>
+                </div>
+
+                <div class="bg-brand-card border border-brand-border rounded-xl overflow-hidden">
+                    <button onclick="toggleFaq(this)" class="w-full px-6 py-4 text-left font-semibold text-white flex justify-between items-center focus:outline-none hover:text-purple-300 transition">
+                        <span>Os sites já vêm adaptados para celular e tablet?</span>
+                        <i class="fa-solid fa-chevron-down text-xs text-slate-400 transition-transform duration-200"></i>
+                    </button>
+                    <div class="px-6 pb-4 text-xs md:text-sm text-slate-400 hidden border-t border-brand-border/50 pt-3 leading-relaxed">
+                        Sim! Todos os projetos são construídos com abordagem <em>Mobile-First</em>, garantindo carregamento rápido e layout ajustado perfeitamente em smartphones, tablets e computadores.
+                    </div>
+                </div>
+
+                <div class="bg-brand-card border border-brand-border rounded-xl overflow-hidden">
+                    <button onclick="toggleFaq(this)" class="w-full px-6 py-4 text-left font-semibold text-white flex justify-between items-center focus:outline-none hover:text-purple-300 transition">
+                        <span>Como funciona o processo de desenvolvimento?</span>
+                        <i class="fa-solid fa-chevron-down text-xs text-slate-400 transition-transform duration-200"></i>
+                    </button>
+                    <div class="px-6 pb-4 text-xs md:text-sm text-slate-400 hidden border-t border-brand-border/50 pt-3 leading-relaxed">
+                        Primeiro alinhamos os objetivos e requisitos do seu projeto. Em seguida, estruturo o layout e o código com atualizações constantes para sua aprovação até a publicação final no domínio.
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- CONTATO SECTION -->
-        <section id="contact" class="py-16 md:py-24 bg-gray-50">
-            <div class="container mx-auto px-4 max-w-4xl">
-                <h2 class="text-3xl md:text-4xl font-extrabold text-gray-900 mb-8 border-l-4 border-indigo-600 pl-4">
-                    Contato</h2>
-                <div class="bg-white p-8 md:p-12 rounded-xl shadow-lg border border-gray-100 text-center md:text-left">
-                    <p class="text-gray-700 leading-relaxed mb-4 text-lg">Entre em contato comigo! Estou sempre aberto a novas oportunidades e colaborações.</p>
-                    <p class="text-gray-700 leading-relaxed mb-2">E-mail preferencial:</p>
-                    <a href="mailto:felippedacruz1@gmail.com" class="text-2xl font-bold text-indigo-600 hover:text-indigo-800 mb-10 block break-words">felippedacruz1@gmail.com</a>
-                    
-                    <p class="text-gray-700 leading-relaxed mb-6">Ou envie uma mensagem diretamente pelo formulário:</p>
-                    
-                    <form action="https://formsubmit.co/felippedacruz1@gmail.com" method="post" class="max-w-2xl mx-auto md:mx-0">
-                        <div class="grid md:grid-cols-2 gap-6 mb-6">
-                            <div>
-                                <label for="Nome" class="block text-gray-700 text-sm font-semibold mb-2">Seu Nome:</label>
-                                <input type="text" name="name" id="Nome" placeholder="Seu nome completo" required
-                                    class="w-full py-3 px-4 text-gray-800 border border-gray-200 rounded-lg focus:ring-2 focus:ring-indigo-300 focus:border-indigo-400 transition">
-                            </div>
-                            <div>
-                                <label for="Email" class="block text-gray-700 text-sm font-semibold mb-2">Seu E-mail:</label>
-                                <input type="email" name="email" id="Email" placeholder="exemplo@email.com" required
-                                    class="w-full py-3 px-4 text-gray-800 border border-gray-200 rounded-lg focus:ring-2 focus:ring-indigo-300 focus:border-indigo-400 transition">
-                            </div>
-                        </div>
-                        <div class="mb-8">
-                            <label for="Message" class="block text-gray-700 text-sm font-semibold mb-2">Sua Mensagem:</label>
-                            <textarea name="message" id="Message" placeholder="Escreva sua mensagem aqui..." required
-                                class="w-full h-40 py-3 px-4 text-gray-800 border border-gray-200 rounded-lg focus:ring-2 focus:ring-indigo-300 focus:border-indigo-400 transition resize-none"></textarea>
-                        </div>
-                        <button type="submit"
-                            class="w-full md:w-auto bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3 px-8 rounded-lg transition-colors focus:ring-4 focus:ring-indigo-200 focus:outline-none">
-                            Enviar Mensagem
-                        </button>
-                    </form>
-                </div>
+        <!-- CONTATO / FORMULÁRIO -->
+        <section id="contact" class="bg-gradient-to-br from-purple-900/30 via-brand-card to-pink-900/20 border border-brand-border rounded-2xl p-8 md:p-12 space-y-8">
+            <div class="text-center max-w-2xl mx-auto space-y-3">
+                <h2 class="text-xs font-bold text-brand-accent uppercase tracking-widest">Vamos Conversar</h2>
+                <h3 class="text-3xl md:text-4xl font-extrabold text-white">Pronto para tirar seu projeto do papel?</h3>
+                <p class="text-slate-300 text-sm md:text-base">
+                    Entre em contato pelo formulário abaixo ou envie um e-mail direto para:
+                </p>
+                <a href="mailto:felippedacruz1@gmail.com" class="inline-block text-lg md:text-xl font-bold text-emerald-400 hover:underline break-all">
+                    felippedacruz1@gmail.com
+                </a>
             </div>
+
+            <form action="https://formsubmit.co/felippedacruz1@gmail.com" method="POST" class="max-w-2xl mx-auto space-y-5">
+                <div class="grid md:grid-cols-2 gap-5">
+                    <div>
+                        <label for="Nome" class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">Seu Nome</label>
+                        <input type="text" name="name" id="Nome" placeholder="Seu nome completo" required
+                            class="w-full bg-slate-900/90 border border-brand-border rounded-xl px-4 py-3.5 text-white placeholder-slate-500 focus:outline-none focus:border-brand-accent transition">
+                    </div>
+                    <div>
+                        <label for="Email" class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">Seu E-mail</label>
+                        <input type="email" name="email" id="Email" placeholder="exemplo@email.com" required
+                            class="w-full bg-slate-900/90 border border-brand-border rounded-xl px-4 py-3.5 text-white placeholder-slate-500 focus:outline-none focus:border-brand-accent transition">
+                    </div>
+                </div>
+
+                <div>
+                    <label for="Message" class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">Sua Mensagem</label>
+                    <textarea name="message" id="Message" rows="4" placeholder="Conte um pouco sobre a sua ideia, projeto ou oportunidade..." required
+                        class="w-full bg-slate-900/90 border border-brand-border rounded-xl px-4 py-3.5 text-white placeholder-slate-500 focus:outline-none focus:border-brand-accent transition resize-none"></textarea>
+                </div>
+
+                <div class="text-center pt-2">
+                    <button type="submit"
+                        class="w-full sm:w-auto inline-flex items-center justify-center space-x-3 px-10 py-4 rounded-xl bg-brand-green text-slate-950 font-bold hover:bg-emerald-400 transition-all transform hover:scale-105 shadow-xl shadow-brand-green/20 cursor-pointer">
+                        <i class="fa-solid fa-paper-plane"></i>
+                        <span>Enviar Mensagem</span>
+                    </button>
+                </div>
+            </form>
         </section>
 
     </main>
 
-    <!-- FOOTER -->
-    <footer id="main-footer" class="bg-gray-800 text-gray-300 py-12 px-4 mt-16">
-        <div class="container mx-auto px-4 text-center">
-            <p class="mb-2 text-lg"><span class="font-bold text-white">Desenvolvedor Web</span> - Meu portfólio pessoal</p>
-            <p class="mb-2 text-sm">Contato: <a href="mailto:felippedacruz1@gmail.com"
-                    class="text-blue-400 hover:underline">felippedacruz1@gmail.com</a></p>
-            <hr class="my-6 border-gray-700 max-w-sm mx-auto">
-            <p class="text-xs">&copy; 2025 Felippe da Cruz Todos os direitos reservados.</p>
-            <p class="text-xs mt-3 italic max-w-lg mx-auto text-gray-400">Este portfólio foi criado para mostrar meu trabalho e habilidades em desenvolvimento web. Atualmente em constante aprimoramento!</p>
-        </div>
-    </footer>
-
-    <!-- BOTÃO VOLTAR AO TOPO -->
-    <!-- Classes CSS personalizadas foram substituídas por classes do Tailwind -->
-    <button id="backToTopBtn"
-        class="fixed bottom-6 right-6 z-50 hidden p-3 rounded-full shadow-lg bg-indigo-600 text-white hover:bg-indigo-700 focus:outline-none focus:ring-4 focus:ring-indigo-200 transition-all duration-300 transform hover:scale-110 active:scale-95">
-        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 15l7-7 7 7"></path>
-        </svg>
-        <span class="sr-only">Voltar ao Topo</span>
+    <!-- BOTÃO FLUTUANTE BACK-TO-TOP -->
+    <button id="backToTopBtn" onclick="scrollToTop()" aria-label="Voltar ao topo"
+        class="fixed bottom-6 right-6 w-12 h-12 bg-brand-accent text-white rounded-full shadow-2xl flex items-center justify-center opacity-0 pointer-events-none transition-all duration-300 hover:bg-brand-accentHover z-50 cursor-pointer">
+        <i class="fa-solid fa-arrow-up text-lg"></i>
     </button>
 
-    <!-- JAVASCRIPT -->
+    <!-- FOOTER -->
+    <footer class="border-t border-brand-border py-10 px-6 text-center text-xs text-slate-500 space-y-2">
+        <p class="text-slate-300 font-semibold text-sm">Felippe da Cruz • Desenvolvedor Web &amp; Analista de Sistemas</p>
+        <p>Contato: <a href="mailto:felippedacruz1@gmail.com" class="text-purple-400 hover:underline">felippedacruz1@gmail.com</a></p>
+        <p class="pt-2">&copy; 2026 Felippe da Cruz. Todos os direitos reservados.</p>
+    </footer>
+
+    <!-- SCRIPTS INTERATIVOS -->
     <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            
-            // --- MENU MOBILE ---
-            // IDs verificados e ajustados no HTML
-            const mobileMenuButton = document.getElementById('mobile-menu-button');
-            const mobileMenu = document.getElementById('mobile-menu');
-            const icons = mobileMenuButton.querySelectorAll('svg'); // Seleciona ambos os ícones
+        // 1. Menu Mobile
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
 
-            if (mobileMenuButton && mobileMenu && icons.length >= 2) {
-                mobileMenuButton.addEventListener('click', () => {
-                    const expanded = mobileMenuButton.getAttribute('aria-expanded') === 'true';
-                    mobileMenuButton.setAttribute('aria-expanded', !expanded);
-                    
-                    // Alterna entre hidden e block para o menu
-                    mobileMenu.classList.toggle('hidden');
-                    
-                    // Alterna os ícones do botão
-                    icons[0].classList.toggle('hidden'); // Menu burguer
-                    icons[1].classList.toggle('hidden'); // X de fechar
-                });
-
-                // Fecha o menu mobile quando um item é clicado
-                const mobileLinks = mobileMenu.querySelectorAll('a');
-                mobileLinks.forEach(link => {
-                    link.addEventListener('click', () => {
-                        mobileMenu.classList.add('hidden');
-                        icons[0].classList.remove('hidden');
-                        icons[1].classList.add('hidden');
-                        mobileMenuButton.setAttribute('aria-expanded', 'false');
-                    });
-                });
-            }
-
-            // --- BOTÃO VOLTAR AO TOPO ---
-            const backToTopBtn = document.getElementById('backToTopBtn');
-
-            if (backToTopBtn) {
-                function toggleBackToTopButton() {
-                    if (window.scrollY > 400) {
-                        // Exibe usando flex para centralizar o ícone e remove hidden
-                        backToTopBtn.classList.remove('hidden');
-                        backToTopBtn.classList.add('flex');
-                    } else {
-                        // Oculta usando hidden e remove flex
-                        backToTopBtn.classList.add('hidden');
-                        backToTopBtn.classList.remove('flex');
-                    }
-                }
-
-                function scrollToTop() {
-                    window.scrollTo({
-                        top: 0,
-                        // behavior: 'smooth' // Comentado pois usamos scroll-smooth nativo no HTML
-                    });
-                }
-
-                // Exibe ou oculta o botão ao rolar a página
-                window.addEventListener('scroll', toggleBackToTopButton);
-
-                // Adiciona o evento de clique para voltar ao topo
-                backToTopBtn.addEventListener('click', scrollToTop);
-                
-                // Chamada inicial para verificar estado na carga da página
-                toggleBackToTopButton();
-            }
-            
-            // --- LIMPEZA DO SCRIPT ORIGINAL ---
-            // Removido o bloco de Dark Mode original, pois não há elementos HTML 
-            // no código fornecido para gerenciar a troca de tema de forma intuitiva
-            // e os IDs usados no código JS original não batiam com os do HTML.
-
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            const icon = mobileMenuBtn.querySelector('i');
+            icon.classList.toggle('fa-bars');
+            icon.classList.toggle('fa-xmark');
         });
+
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                const icon = mobileMenuBtn.querySelector('i');
+                icon.classList.add('fa-bars');
+                icon.classList.remove('fa-xmark');
+            });
+        });
+
+        // 2. Simulador Interativo de Projeto Web
+        const projectType = document.getElementById('projectType');
+        const addonChecks = document.querySelectorAll('.addon-check');
+        const simPrice = document.getElementById('simPrice');
+        const simDays = document.getElementById('simDays');
+
+        function updateSimulator() {
+            const selectedOption = projectType.options[projectType.selectedIndex];
+            let totalPrice = parseFloat(selectedOption.value) || 0;
+            let totalDays = parseInt(selectedOption.dataset.days) || 0;
+
+            addonChecks.forEach(check => {
+                if (check.checked) {
+                    totalPrice += parseFloat(check.value) || 0;
+                    totalDays += parseInt(check.dataset.days) || 0;
+                }
+            });
+
+            simPrice.innerText = totalPrice.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+            simDays.innerText = `${totalDays} dias úteis`;
+        }
+
+        projectType.addEventListener('change', updateSimulator);
+        addonChecks.forEach(check => check.addEventListener('change', updateSimulator));
+        updateSimulator();
+
+        // 3. FAQ Accordion Interativo
+        function toggleFaq(button) {
+            const content = button.nextElementSibling;
+            const icon = button.querySelector('i');
+
+            content.classList.toggle('hidden');
+            icon.classList.toggle('rotate-180');
+        }
+
+        // 4. Botão Back-to-Top Flutuante
+        const backToTopBtn = document.getElementById('backToTopBtn');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTopBtn.classList.remove('opacity-0', 'pointer-events-none');
+                backToTopBtn.classList.add('opacity-100');
+            } else {
+                backToTopBtn.classList.remove('opacity-100');
+                backToTopBtn.classList.add('opacity-0', 'pointer-events-none');
+            }
+        });
+
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // 5. Filtro de Projetos
+        function filterProjects(category, clickedBtn) {
+            const cards = document.querySelectorAll('.project-card');
+            const buttons = document.querySelectorAll('.filter-btn');
+
+            buttons.forEach(btn => {
+                btn.classList.remove('bg-brand-accent', 'text-white');
+                btn.classList.add('text-slate-400');
+            });
+
+            clickedBtn.classList.add('bg-brand-accent', 'text-white');
+            clickedBtn.classList.remove('text-slate-400');
+
+            cards.forEach(card => {
+                if (category === 'all' || card.dataset.category === category) {
+                    card.style.display = 'flex';
+                    setTimeout(() => card.style.opacity = '1', 30);
+                } else {
+                    card.style.opacity = '0';
+                    setTimeout(() => card.style.display = 'none', 250);
+                }
+            });
+        }
+
+        // 6. Animação de Métricas (Counters)
+        const animateCounters = () => {
+            const counters = document.querySelectorAll('.counter');
+            counters.forEach(counter => {
+                const target = +counter.getAttribute('data-target');
+                const prefix = counter.getAttribute('data-prefix') || '';
+                const suffix = counter.getAttribute('data-suffix') || '';
+                let count = 0;
+                const increment = Math.max(1, Math.ceil(target / 40));
+
+                const updateCount = () => {
+                    count += increment;
+                    if (count < target) {
+                        counter.innerText = `${prefix}${count}${suffix}`;
+                        setTimeout(updateCount, 30);
+                    } else {
+                        counter.innerText = `${prefix}${target}${suffix}`;
+                    }
+                };
+                updateCount();
+            });
+        };
+
+        let countersAnimated = false;
+        const triggerCounters = () => {
+            if (!countersAnimated && window.scrollY > 80) {
+                animateCounters();
+                countersAnimated = true;
+            }
+        };
+
+        window.addEventListener('scroll', triggerCounters);
+        triggerCounters();
     </script>
 </body>
 
